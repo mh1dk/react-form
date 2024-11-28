@@ -7,18 +7,20 @@ const Form = ({data , updater}) => {
     const [position, setPosition] = useState('');
 
 
-
 const handleClick = (e) => {
     e.preventDefault();
+    let newId = data.length+1;
     const inputObject = {
         fName,
         lName,
         age,
-        position
+        position,
+        id: newId,
     }
     const temp = [...data];
     temp.push(inputObject);
     updater(temp)
+    newId++;
 }
 
 
